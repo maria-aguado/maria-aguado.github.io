@@ -483,6 +483,11 @@ h2 {
   gap: 0.7rem;
 }
 
+.publication-header .item-title {
+  border-bottom: 1px dashed rgba(0, 142, 128, 0.6);
+  padding-bottom: 0.18rem;
+}
+
 .publication-fields {
   display: grid;
   gap: 0.45rem;

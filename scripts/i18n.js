@@ -264,34 +264,23 @@ function renderPublicationsList(listElementId, items, lang) {
       header.appendChild(link);
     }
 
-    const fields = document.createElement("div");
-    fields.className = "publication-fields";
+    listItem.appendChild(header);
 
-    const createField = (label, value) => {
-      const row = document.createElement("div");
-      row.className = "publication-field";
-
-      const rowLabel = document.createElement("span");
-      rowLabel.className = "publication-label";
-      rowLabel.textContent = `${label}:`;
-
-      const rowValue = document.createElement("span");
-      rowValue.className = "publication-value item-meta";
-      rowValue.textContent = value;
-
-      row.append(rowLabel, rowValue);
-      return row;
-    };
-
-    fields.appendChild(createField(currentLabels.publicationType, item.publicationType || "N/A"));
-    fields.appendChild(createField(currentLabels.wherePublished, item.wherePublished || "N/A"));
-    fields.appendChild(createField(currentLabels.date, item.date || "N/A"));
+    const detailValues = [
+      item.publicationType,
+      item.wherePublished,
+      item.date
+    ].filter(Boolean);
 
     if ((item.doi || "").trim()) {
-      fields.appendChild(createField(currentLabels.doi, item.doi));
+      detailValues.push(`${currentLabels.doi}: ${item.doi}`);
     }
 
-    listItem.append(header, fields);
+    const details = document.createElement("p");
+    details.className = "publication-details item-meta";
+    details.textContent = detailValues.join(", ");
+
+    listItem.appendChild(details);
     listNode.appendChild(listItem);
   });
 }
