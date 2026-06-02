@@ -1,12 +1,348 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>My site</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>María Aguado Yáñez</title>
+    <meta
+      name="description"
+      content="Personal CV and artistic portfolio of María Aguado Yáñez."
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link rel="stylesheet" href="https://unpkg.com/svgmap/dist/svgMap.min.css" />
+    <link rel="stylesheet" href="styles/main.css" />
   </head>
   <body>
-    <h1>Hello!</h1>
-    <p>This is my free GitHub Pages website.</p>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+
+    <header class="site-header">
+      <div class="brand">
+      </div>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <img src="assets/my-logo.png" alt="María Aguado Yáñez logo" class="nav-logo" />
+        <a href="#home" data-i18n="nav.home">Home</a>
+        <a href="#education" data-i18n="nav.education">Education</a>
+        <a href="#publications" data-i18n="nav.publications">Publications</a>
+        <a href="#research-experience" data-i18n="nav.researchExperience">Research Experience</a>
+        <a href="#miscellaneous" data-i18n="nav.miscellaneous">Miscellaneous</a>
+      </nav>
+
+      <div class="language-switch" role="group" aria-label="Language selector">
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-lang="es">ES</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section id="home" class="panel home-panel">
+        <div class="portrait-wrap">
+          <img src="assets/guitarra-candamia.JPG" alt="Profile picture of María Aguado Yáñez" />
+        </div>
+
+        <div class="home-content">
+          <h1 class="home-vignette-title" data-i18n="home.title">María's Website</h1>
+          <p class="lead" data-i18n="home.intro.p1"></p>
+          <p class="lead" data-i18n="home.intro.p2">
+            Currently, I reside in the UK, but I am originally from Spain. I am a PhD student at the University of Plymouth in Quantum Computing in Audio Signal Processing, as well as a predoctoral researcher at the company Moth, which focuses on quantum computing applications in the creative industries.
+          </p>
+          <p class="lead" data-i18n="home.intro.p3"></p>
+        </div>
+
+        <div class="social-links" aria-label="Social media links">
+          <a href="https://github.com/maria-aguado" data-i18n="home.social.github">GitHub</a>
+          <a href="https://www.linkedin.com/in/mariaaguadoyan/" data-i18n="home.social.linkedin">LinkedIn</a>
+          <a href="https://www.instagram.com/quantum_mary/?hl=es" data-i18n="home.social.instagram">Instagram</a>
+          <span class="email-bubble-wrap">
+            <button
+              type="button"
+              data-i18n="home.social.email"
+              data-email-trigger
+              aria-expanded="false"
+              aria-controls="email-bubble"
+            >Email</button>
+            <span id="email-bubble" class="email-bubble" role="status" aria-live="polite">
+              maria.aguadoyanez@plymouth.ac.uk
+            </span>
+          </span>
+        </div>
+      </section>
+
+      <section id="education" class="panel detail-section">
+        <h2 data-i18n="sections.education">Education</h2>
+        <ul id="education-list" class="item-list"></ul>
+      </section>
+
+      <section id="publications" class="panel detail-section">
+        <h2 data-i18n="sections.publications">Publications</h2>
+        <ul id="publications-list" class="item-list"></ul>
+      </section>
+
+      <section id="research-experience" class="panel detail-section">
+        <h2 data-i18n="sections.researchExperience">Research Experience</h2>
+
+        <div class="continent-grid">
+          <article class="continent-card misc-subsection research-subsection">
+            <h3 data-i18n="sections.workExperience">Work Experience</h3>
+            <ul id="work-experience-list" class="item-list"></ul>
+          </article>
+
+          <article class="continent-card misc-subsection research-subsection">
+            <h3 data-i18n="sections.talksLectures">Talks & Lectures</h3>
+            <ul id="talks-list" class="item-list"></ul>
+          </article>
+
+          <article class="continent-card misc-subsection research-subsection">
+            <h3 data-i18n="sections.concertsFestivals">Concerts & Festivals</h3>
+            <ul id="concerts-list" class="item-list"></ul>
+          </article>
+
+          <article class="continent-card misc-subsection research-subsection">
+            <h3 data-i18n="sections.reviewerExperience">Reviewer Experience</h3>
+            <ul id="reviewer-experience-list" class="item-list"></ul>
+          </article>
+
+          <article class="continent-card misc-subsection research-subsection">
+            <h3 data-i18n="sections.coursesSchools">Courses & Schools</h3>
+            <ul id="courses-schools-list" class="item-list"></ul>
+          </article>
+
+          <article class="continent-card misc-subsection research-subsection">
+            <h3 data-i18n="sections.otherProjects">Other Projects</h3>
+            <ul id="other-projects-list" class="item-list"></ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="miscellaneous" class="panel detail-section">
+        <h2 data-i18n="sections.miscellaneous">Miscellaneous</h2>
+
+        <div class="continent-grid">
+          <article id="misc-visited" class="continent-card misc-subsection" style="grid-column: 1 / -1;">
+            <h3 data-i18n="sections.visitedCountries">Visited Countries</h3>
+            <p class="section-subtitle" data-i18n="sections.visitedCountriesSubtitle"></p>
+
+            <div id="visited-map" class="visited-map" aria-label="World map of visited countries"></div>
+
+            <div class="continent-grid">
+              <article class="continent-card">
+                <h3 data-i18n="visited.europe">Europe</h3>
+                <ol id="visited-europe-list" class="country-list"></ol>
+                <p class="continent-total" data-i18n="visited.europeTotal">Total in Europe: 15</p>
+              </article>
+
+              <article class="continent-card">
+                <h3 data-i18n="visited.southAmerica">South America</h3>
+                <ol id="visited-south-america-list" class="country-list"></ol>
+                <p class="continent-total" data-i18n="visited.southAmericaTotal">Total in South America: 1</p>
+              </article>
+
+              <article class="continent-card">
+                <h3 data-i18n="visited.asia">Asia</h3>
+                <ol id="visited-asia-list" class="country-list"></ol>
+                <p class="continent-total" data-i18n="visited.asiaTotal">Total in Asia: 1</p>
+              </article>
+            </div>
+          </article>
+
+          <p class="section-subtitle" data-i18n="sections.miscellaneousSubtitle" style="grid-column: 1 / -1; margin: 0.15rem 0 0.25rem;">These are some of my favourite films, books and videogames</p>
+
+          <article id="misc-movies" class="continent-card misc-subsection">
+            <h3 data-i18n="misc.movies">Cinema</h3>
+            <ul class="film-list" aria-label="Favourite films">
+              <li class="film-item">
+                <img src="assets/films/portrait-of-a-lady-on-fire.jpg" alt="Portrait of a Lady on Fire film cover" class="film-cover" />
+                <div>
+                  <span class="item-title">Portrait de la jeune fille en feu (Portrait of a Lady on Fire)</span>
+                  <span class="item-meta">Céline Sciamma</span>
+                </div>
+              </li>
+              <li class="film-item">
+                <img src="assets/films/howls-moving-castle.jpg" alt="Howl's Moving Castle film cover" class="film-cover" />
+                <div>
+                  <span class="item-title">ハウルの動く城 (Howl's Moving Castle)</span>
+                  <span class="item-meta">Hayao Miyazaki</span>
+                </div>
+              </li>
+              <li class="film-item">
+                <img src="assets/films/les-choristes.jpg" alt="Les Choristes film cover" class="film-cover" />
+                <div>
+                  <span class="item-title">Les Choristes (The Chorus)</span>
+                  <span class="item-meta">Christophe Barratier</span>
+                </div>
+              </li>
+              <li class="film-item">
+                <img src="assets/films/la-princesa-prometida.jpg" alt="La princesa prometida film cover" class="film-cover" />
+                <div>
+                  <span class="item-title">The Princess Bride</span>
+                  <span class="item-meta">Rob Reiner</span>
+                </div>
+              </li>
+              <li class="film-item">
+                <img src="assets/films/little-miss-sunshine.jpg" alt="Little Miss Sunshine film cover" class="film-cover" />
+                <div>
+                  <span class="item-title">Little Miss Sunshine</span>
+                  <span class="item-meta">Jonathan Dayton &amp; Valerie Faris</span>
+                </div>
+              </li>
+              <li class="film-item">
+                <img src="assets/films/life-is-beautiful.jpg" alt="Life is Beautiful film cover" class="film-cover" />
+                <div>
+                  <span class="item-title">La vita è bella (Life Is Beautiful)</span>
+                  <span class="item-meta">Roberto Benigni</span>
+                </div>
+              </li>
+              <li class="film-item">
+                <img src="assets/films/la-lengua-de-las-mariposas.jpg" alt="La lengua de las mariposas film cover" class="film-cover" />
+                <div>
+                  <span class="item-title">La lengua de las mariposas (Butterfly)</span>
+                  <span class="item-meta">José Luis Cuerda</span>
+                </div>
+              </li>
+              <li class="film-item">
+                <img src="assets/films/el-47.jpg" alt="El 47 film cover" class="film-cover" />
+                <div>
+                  <span class="item-title">El 47 (The 47)</span>
+                  <span class="item-meta">Marcel Barrena</span>
+                </div>
+              </li>
+              <li class="film-item">
+                <img src="assets/films/marriage-story.png" alt="Marriage Story film cover" class="film-cover" />
+                <div>
+                  <span class="item-title">Marriage Story</span>
+                  <span class="item-meta">Noah Baumbach</span>
+                </div>
+              </li>
+            </ul>
+          </article>
+
+          <article id="misc-literature" class="continent-card misc-subsection">
+            <h3 data-i18n="misc.literature">Literature</h3>
+            <ul class="book-list" aria-label="Favourite books">
+              <li class="book-item">
+                <img src="assets/books/romeo-and-juliet.jpg" alt="Romeo and Juliet book cover" class="book-cover" />
+                <div>
+                  <span class="item-title">Romeo and Juliet</span>
+                  <span class="item-meta">William Shakespeare</span>
+                </div>
+              </li>
+              <li class="book-item">
+                <img src="assets/books/1984.jpg" alt="1984 book cover" class="book-cover" />
+                <div>
+                  <span class="item-title">1984</span>
+                  <span class="item-meta">George Orwell</span>
+                </div>
+              </li>
+              <li class="book-item">
+                <img src="assets/books/pride-and-prejudice.jpg" alt="Pride and Prejudice book cover" class="book-cover" />
+                <div>
+                  <span class="item-title">Pride and Prejudice</span>
+                  <span class="item-meta">Jane Austen</span>
+                </div>
+              </li>
+              <li class="book-item">
+                <img src="assets/books/intermezzo.jpg" alt="Intermezzo book cover" class="book-cover" />
+                <div>
+                  <span class="item-title">Intermezzo</span>
+                  <span class="item-meta">Sally Rooney</span>
+                </div>
+              </li>
+              <li class="book-item">
+                <img src="assets/books/donde-los-arboles-cantan.jpg" alt="Donde los árboles cantan book cover" class="book-cover" />
+                <div>
+                  <span class="item-title">Donde los árboles cantan</span>
+                  <span class="item-meta">Laura Gallego</span>
+                </div>
+              </li>
+              <li class="book-item">
+                <img src="assets/books/la-vida-es-sueno.jpg" alt="La vida es sueño book cover" class="book-cover" />
+                <div>
+                  <span class="item-title">La vida es sueño</span>
+                  <span class="item-meta">Pedro Calderón de la Barca</span>
+                </div>
+              </li>
+            </ul>
+          </article>
+
+          <article id="misc-videogames" class="continent-card misc-subsection">
+            <h3 data-i18n="misc.videogames">Videogames</h3>
+            <ul class="videogame-list" aria-label="Favourite videogames">
+              <li class="videogame-item">
+                <span class="item-title">Animal Crossing: Wild World</span>
+                <span class="item-meta">Life Simulation, Collecting, Decorating</span>
+              </li>
+              <li class="videogame-item">
+                <span class="item-title">Animal Crossing: New Horizons</span>
+                <span class="item-meta">Life Simulation, Collecting, Decorating</span>
+              </li>
+              <li class="videogame-item">
+                <span class="item-title">The Legend of Zelda: Breath of the Wild</span>
+                <span class="item-meta">Open World, Action, Adventure</span>
+              </li>
+              <li class="videogame-item">
+                <span class="item-title">Blue Prince</span>
+                <span class="item-meta">Puzzle, RNG, Deck-building</span>
+              </li>
+              <li class="videogame-item">
+                <span class="item-title">Baba Is You</span>
+                <span class="item-meta">Puzzle, Logic</span>
+              </li>
+              <li class="videogame-item">
+                <span class="item-title">Dragon Quest IV: Chapters of the Chosen</span>
+                <span class="item-meta">RPG, Turn-based</span>
+              </li>
+              <li class="videogame-item">
+                <span class="item-title">Outer Wilds</span>
+                <span class="item-meta">Adventure, Mystery, Puzzle</span>
+              </li>
+              <li class="videogame-item">
+                <span class="item-title">Little Nightmares</span>
+                <span class="item-meta">Platformer, Puzzle, Horror</span>
+              </li>
+              <li class="videogame-item">
+                <span class="item-title">Hollow Knight: Silksong</span>
+                <span class="item-meta">Metroidvania, Action, Adventure</span>
+
+              </li>
+              <li class="videogame-item">
+                <span class="item-title">The Binding of Isaac: Rebirth</span>
+                <span class="item-meta">Roguelike, Action, Dungeon Crawler</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>María Aguado Yáñez</p>
+      <span class="footer-logo-wrap">
+        <button
+          type="button"
+          class="footer-logo-btn"
+          data-logo-trigger
+          aria-expanded="false"
+          aria-controls="logo-bubble"
+          aria-label="About my logo"
+        >
+          <img src="assets/my-logo.png" alt="María Aguado Yáñez logo" class="footer-logo" />
+        </button>
+        <span id="logo-bubble" class="logo-bubble" role="status" aria-live="polite">
+          This is my logo! Notice that the electrons happen to be music figures :)
+        </span>
+      </span>
+    </footer>
+
+    <script src="https://unpkg.com/svgmap/dist/svgMap.min.js"></script>
+    <script type="module" src="scripts/visited-map.js"></script>
+    <script type="module" src="scripts/i18n.js"></script>
+    <script type="module" src="scripts/section-navigation.js"></script>
+    <script type="module" src="scripts/email-bubble.js"></script>
+    <script type="module" src="scripts/logo-bubble.js"></script>
   </body>
 </html>
